@@ -2,7 +2,6 @@
   "name": "mini-eventbrite-backend",
   "version": "1.0.0",
   "description": "Proyecto dedicado al uso lúdico, para la creación de una boletera para eventos, cuyo desarrollo va orientado a un producto mínimo viable para backend.",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec node src/server.js",
