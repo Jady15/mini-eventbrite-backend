@@ -5,7 +5,7 @@ export async function register(req, res, next) {
         const result = await Auth.register(req.body);
         res.status(201).json(result);
     } catch (err) {
-        next(e);
+        next(err);
     }
 }
 export async function login(req, res, next) {

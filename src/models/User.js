@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   },
 }, {timestamps: true});
 
-userSchema.static.hashPassword = async function (password) {
+userSchema.statics.hashPassword = async function (password) {
     const salt = await bcrypt.genSalt(10);
     return bcrypt.hash(password, salt);
 }
@@ -35,3 +35,5 @@ userSchema.methods.checkPassword = async function (password) {
 }
 
 export const User = mongoose.model('User', userSchema);
+
+
