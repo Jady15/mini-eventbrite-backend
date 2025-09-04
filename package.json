@@ -8,7 +8,13 @@
     "start": "node src/server.js",
     "build": "echo 'No build step needed for Node ESM'"
   },
-  "keywords": ["express", "nodemon", "JWT", "Token", "Server"],
+  "keywords": [
+    "express",
+    "nodemon",
+    "JWT",
+    "Token",
+    "Server"
+  ],
   "author": "Isaac Jared Luviano Hernandez",
   "license": "ISC",
   "packageManager": "pnpm@10.14.0",

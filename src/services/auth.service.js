@@ -11,11 +11,11 @@ export async function login({ email, password }) {
     const refreshToken = signRefreshToken({ sub: user.id });
     return { user: scrub(user), accessToken, refreshToken }
 }
-export async function register({ name, email, password }) {
+export async function register({ name, email, password, role }) {
     const exists = await User.findOne({ email });
     if (exists) throw new AppError('Email already registered', 409, 'INVALID_CREDENTIALS');
     const passwordHash = await User.hashPassword(password);
-    const user = await User.create({ name, email, passwordHash });
+    const user = await User.create({ name, email, passwordHash, role });
     const accessToken = signAccessToken({ sub: user.id, role: user.role });
     const refreshToken = signRefreshToken({ sub: user.id });
     return { user: scrub(user), accessToken, refreshToken }
