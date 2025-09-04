@@ -20,3 +20,10 @@ export async function create(req, res, next) {
     res.status(201).json({ item });
   } catch (e) { next(e); }
 }
+
+export async function getOccupied(req, res, next) {
+  try {
+    const seats = await Events.getOccupiedSeats(req.params.id);
+    res.json({ occupiedSeats: seats});
+  } catch (e) { next(e); }
+}
