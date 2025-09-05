@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "a8df1c6b-03ca-479d-aadc-746a64fea910",
+		"name": "Eventbrite mini",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5385544"
+	},
+	"item": [
+		{
+			"name": "Healtcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/healt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"healt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"OCESA\",\n    \"email\":\"info@ocesa.com\",\n    \"password\":\"123456789\",\n    \"role\": \"organizer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"danniel.gloria@gmail.com\",\n    \"password\":\"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mi info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGE3ZDRkN2RmY2JiMzM4ZjhmNGNhM2MiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NTgyOTcyNCwiZXhwIjoxNzU1ODMwNjI0fQ.1UC0AWZ7vgE4kSC1hO_r24sQdtI8AK33vjoymwhSY84",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"68a7d4d7dfcbb338f8f4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear evento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGE3ZTA4ZDNjYTUwMTI2NTBiZWZkNWQiLCJyb2xlIjoib3JnYW5pemVyIiwiaWF0IjoxNzU1ODMyNDYxLCJleHAiOjE3NTU4MzMzNjF9.AIo9R6d9ZI25qGdaMaN3_5iAB-YBqwgO3JYyy9AAl1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"VivaLatino\",\n  \"description\": \"Concierto de musica Latina)\",\n  \"date\": \"2026-09-25T19:30:00.000Z\",\n  \"venue\": \"Chapultepec\",\n  \"imageUrl\": \"https://media.ambito.com/p/66d99d08a022522d0dec69064dca5b09/adjuntos/360/imagenes/042/484/0042484945/730x0/smart/flow-fest-2025.jpg\",\n  \"seatMap\": {\n    \"type\": \"ga\",\n    \"rows\": 1,\n    \"cols\": 1\n  },\n  \"price\": 5000.99,\n  \"isPublished\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/events/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer todos los eventos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGE3ZTA4ZDNjYTUwMTI2NTBiZWZkNWQiLCJyb2xlIjoib3JnYW5pemVyIiwiaWF0IjoxNzU1ODMyNDYxLCJleHAiOjE3NTU4MzMzNjF9.AIo9R6d9ZI25qGdaMaN3_5iAB-YBqwgO3JYyy9AAl1c",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/events/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer evento por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGE3ZTA4ZDNjYTUwMTI2NTBiZWZkNWQiLCJyb2xlIjoib3JnYW5pemVyIiwiaWF0IjoxNzU1ODMyNDYxLCJleHAiOjE3NTU4MzMzNjF9.AIo9R6d9ZI25qGdaMaN3_5iAB-YBqwgO3JYyy9AAl1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/events/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comprar Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFlNjIyM2MxNmQ2ODc2Y2Y3OWNhZWEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NjI1OTE0MSwiZXhwIjoxNzU2MjYwMDQxfQ.aAriN-o1HVplynAFmOTm8Ebl98Mog7zr7m4g0W2xKDc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"eventId\": \"68a7e264b036f6d7cd788cb2\",\n  \"seat\": {\n    \"row\": 1,\n    \"col\": 1\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Escanear Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFlNjFiYmMxNmQ2ODc2Y2Y3OWNhZTUiLCJyb2xlIjoib3JnYW5pemVyIiwiaWF0IjoxNzU2MjYwMTI1LCJleHAiOjE3NTYyNjEwMjV9.BohYAfEoNWH2xIwxKUSwJEESkxmnIUSWuV6n8oICSr4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token\": \"{\\\"t\\\":\\\"68ae6386c16d6876cf79caee\\\",\\\"s\\\":\\\"aaed76b956b0a1c61591c45e61ed9ad2a2ef1fe2debfbd24f2b01ac53e2d73f6\\\"}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/checkin/scan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"checkin",
+						"scan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
